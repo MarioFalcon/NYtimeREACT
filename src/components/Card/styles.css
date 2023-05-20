@@ -1,0 +1,37 @@
+.cardContainer {
+  border: 1px solid gray;
+  border-radius: 4px;
+  height: 10rem;
+  width: 10rem;
+}
+
+.cardContainer{
+border-top: 1px solid gray;
+border-radius: 4px;
+height: 15rem;
+width: 10rem;
+}
+
+
+
+.cardContent {
+  padding: 16px;
+}
+
+/* .cardHeader{
+border-top: 1px solid gray;
+} */
+
+.cardFooter {
+  border-top: 1px solid gray;
+  margin-top: 16px;
+}
+
+.cardFooterContent {
+  margin-top: 16px;
+}
+
+.extraInfo {
+margin-bottom: 16px;
+
+}
