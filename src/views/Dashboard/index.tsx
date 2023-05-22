@@ -8,7 +8,6 @@ import { Category } from "../../models/Category";
 
 const Dashboard: FC = () => {
    const [categories, setCategories] = useState<Category[]>([]);
-
    const [isLoading, setIsLoading] = useState(false);
 
    const handleSetCategories = useCallback(async () => {
@@ -18,7 +17,6 @@ const Dashboard: FC = () => {
    }, []);
 
    useEffect(() => {
-      setIsLoading(true);
       handleSetCategories();
    }, [handleSetCategories]);
 
