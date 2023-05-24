@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Link as DefaultLink } from "react-router-dom";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+
+`;
 
 export const Form = styled.form`
   border: 1px solid ${({ theme }) => theme.colors.grey900};
@@ -11,10 +13,12 @@ export const Form = styled.form`
 `;
 
 export const FormContent = styled.div`
+background-color: #f9f9f9;
   padding: 10px;
 `;
 
 export const InputController = styled.div`
+
   display: flex;
   flex-flow: column;
 
@@ -26,6 +30,7 @@ export const InputController = styled.div`
 export const Label = styled.label`
   font-size: 16px;
   margin-bottom: 14px;
+  
 `;
 
 export const Input = styled.input``;
@@ -35,6 +40,7 @@ export const InputError = styled.span`
   font-size: 12px;
   line-height: 0.9;
   margin-top: 8px;
+  
 `;
 
 export const Link = styled(DefaultLink)`
@@ -44,6 +50,7 @@ export const Link = styled(DefaultLink)`
   margin-top: 16px;
   text-align: center;
   transition: color 200ms ease-in-out;
+  
 
   &:hover {
     color: ${({ theme }) => theme.colors.blue900};

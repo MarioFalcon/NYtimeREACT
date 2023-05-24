@@ -27,6 +27,7 @@ export const FooterContent = styled.div`
 
 export const ExtraInfo = styled.div`
   margin-bottom: 16px;
+  
 `
 
 export const Button = styled(DefaultButton)`

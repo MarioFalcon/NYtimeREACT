@@ -7,7 +7,7 @@ export const Container = styled.header`
 
 export const Content = styled.div`
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.blue300};
+  background-color: ${({ theme }) => theme.colors.black};
   display: flex;
   flex-flow: row;
   justify-content: space-between;
