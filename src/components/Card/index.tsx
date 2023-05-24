@@ -1,25 +1,35 @@
 import {FC, useCallback} from 'react'
-
-import "./styles.css";
-import { Props } from "./types";
 import Button from '../Button';
+import {
+  Container,
+  Content,
+  ExtraInfo,
+  Footer,
+  FooterContent,
+  Header,
+} from './styles'
+import type { Props } from './types'
 
-
-const Card: FC<Props> = ({ title, extraInfo, isDetails = false }) => {
+const Card: FC<Props> = ({ title, extraInfo, isDetails = false, onClick }) => {
+  const handleClick = useCallback(() => {
+    if (onClick) {
+      onClick()
+    }
+  }, [onClick])
+  
+  
   return (
-    <div className="cardContainer">
-      <div className="cardContent">
-        <div className="cardHeader">{title}</div>
-        <div className="cardFooter">
-        <div className="cardFooterContent">
-          <div className="extraInfo">
-            {extraInfo}
-          </div>
-          {!isDetails && <Button>Detalle</Button>}
-          </div>
-          </div>
-      </div>
-    </div>
+    <Container>
+    <Content>
+      <Header>{title}</Header>
+      <Footer>
+        <FooterContent>
+          <ExtraInfo>{extraInfo}</ExtraInfo>
+          {!isDetails && <Button onClick={handleClick}>Detalle</Button>}
+        </FooterContent>
+      </Footer>
+    </Content>
+  </Container>
   );
 };
 

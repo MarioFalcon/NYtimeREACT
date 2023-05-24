@@ -1,12 +1,10 @@
 import { FC } from 'react'
+import { Container } from "./styles";
 import type { Props } from './types'
-import './styles.css'
 
-const Button: FC<Props> = ({children}) => {
-return <button className='customButton'>{children}</button>
+const Button: FC<Props> = ({children, onClick}) => {
+return <Container onClick={onClick}>{children}</Container>
     
-
-
 }
 
 export default Button

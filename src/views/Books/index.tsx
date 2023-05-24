@@ -1,21 +1,23 @@
-import { FC, useCallback, useEffect, useState } from "react"
+import { FC, useCallback, useEffect, useState } from "react";
 import { getListBooks } from "../../services/nytime";
 import { Book } from "../../models/Book";
-import Card from "../../components/Card"
-
+import Card from "../../components/Card";
+import { useParams } from "react-router-dom";
+import { BooksList, Container } from './styles'
 
 const Books: FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { listKey } = useParams();
 
   const handleSetBooks = useCallback(async () => {
-    const categoriesList = await getListBooks(
-      "combined-print-and-e-book-fiction"
-    );
+    if (listKey) {
+      const categoriesList = await getListBooks(listKey);
+      setBooks(categoriesList);
+    }
 
-    setBooks(categoriesList);
     setIsLoading(false);
-  }, []);
+  }, [listKey]);
 
   useEffect(() => {
     handleSetBooks();
@@ -26,17 +28,19 @@ const Books: FC = () => {
   }
 
   return (
-    <div className="booksContainer">
-      <div className="books">
-        {books.map((book ) => (
-            <Card key={book.title} title={book.title} extraInfo={book.author}/>
+    <Container>
+      <BooksList>
+        {books.map((book, index) => (
+          <Card
+            key={index}
+            title={book.title}
+            extraInfo={book.author}
+            isDetails={true}
+          />
         ))}
-      </div>
-    </div>
+      </BooksList>
+    </Container>
   )
 }
 
 export default Books;
-
-
-

@@ -1,13 +1,15 @@
 import { FC } from "react";
-import "./styles.css";
+import { Container, Content, Title } from './styles'
+
+
 
 const Header: FC = () => {
   return (
-    <header className="headerContainer">
-      <div className="headerContent">
-        <h2 className="tittle"> NY Times Books </h2>
-      </div>
-    </header>
+    <Container>
+    <Content>
+      <Title>NY Times Books</Title>
+    </Content>
+  </Container>
   );
 };
 
