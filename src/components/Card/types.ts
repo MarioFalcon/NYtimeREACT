@@ -1,6 +1,6 @@
 export type Props = {
-   title: string
-   extraInfo: string
-   isDetails?: boolean
-   onClick?: () => void
- }
+  title: string
+  extraInfo: string
+  isDetails?: boolean
+  onClick?: () => void
+}

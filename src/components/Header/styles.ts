@@ -6,7 +6,11 @@ export const Container = styled.header`
 `
 
 export const Content = styled.div`
+  align-items: center;
   background-color: ${({ theme }) => theme.colors.blue300};
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
   padding: 16px;
 `
 

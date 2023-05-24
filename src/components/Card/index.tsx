@@ -1,6 +1,6 @@
-import {memo, FC, useCallback} from 'react'
-import Button from '../Button';
+import { FC, memo, useCallback } from 'react'
 import {
+  Button,
   Container,
   Content,
   ExtraInfo,
@@ -16,21 +16,20 @@ const Card: FC<Props> = ({ title, extraInfo, isDetails = false, onClick }) => {
       onClick()
     }
   }, [onClick])
-  
-  
+
   return (
     <Container>
-    <Content>
-      <Header>{title}</Header>
-      <Footer>
-        <FooterContent>
-          <ExtraInfo>{extraInfo}</ExtraInfo>
-          {!isDetails && <Button onClick={handleClick}>Detalle</Button>}
-        </FooterContent>
-      </Footer>
-    </Content>
-  </Container>
-  );
-};
+      <Content>
+        <Header>{title}</Header>
+        <Footer>
+          <FooterContent>
+            <ExtraInfo>{extraInfo}</ExtraInfo>
+            {!isDetails && <Button onClick={handleClick}>Detalle</Button>}
+          </FooterContent>
+        </Footer>
+      </Content>
+    </Container>
+  )
+}
 
 export default memo(Card)

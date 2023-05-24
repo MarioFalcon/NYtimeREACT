@@ -1,18 +1,19 @@
 import styled from 'styled-components'
-// import { Props } from './types'
+import { Props } from './types'
 
-export const Container = styled.button`
+export const Container = styled.button<{ $variant: Props['variant'] }>`
   background-color: white;
   border: 1px solid ${({ theme }) => theme.colors.blue300};
   border-radius: 4px;
-  color: ${({ theme }) => theme.colors.blue300};
+  color: ${({ theme, $variant }) =>
+    $variant === 'primary' ? theme.colors.blue300 : theme.colors.orange};
   cursor: pointer;
   transition: all 200ms ease-in-out;
   padding: 8px 16px;
-  width: 100%;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.blue300 ? theme.colors.blue300 : theme.colors.orange};
+    background-color: ${({ theme, $variant }) =>
+      $variant === 'primary' ? theme.colors.blue300 : theme.colors.orange};
     color: white;
   }
 `
