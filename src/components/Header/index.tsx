@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { Container, Content, Title } from './styles'
 
 
@@ -13,4 +13,4 @@ const Header: FC = () => {
   );
 };
 
-export default Header;
+export default memo(Header)

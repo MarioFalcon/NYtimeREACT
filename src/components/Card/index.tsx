@@ -1,4 +1,4 @@
-import {FC, useCallback} from 'react'
+import {memo, FC, useCallback} from 'react'
 import Button from '../Button';
 import {
   Container,
@@ -33,4 +33,4 @@ const Card: FC<Props> = ({ title, extraInfo, isDetails = false, onClick }) => {
   );
 };
 
-export default Card;
+export default memo(Card)

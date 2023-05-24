@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from "react";
+import { memo, FC, useCallback, useEffect, useState } from "react";
 import { getListBooks } from "../../services/nytime";
 import { Book } from "../../models/Book";
 import Card from "../../components/Card";
@@ -43,4 +43,4 @@ const Books: FC = () => {
   )
 }
 
-export default Books;
+export default memo(Books);

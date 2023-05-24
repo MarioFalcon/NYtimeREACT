@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { Container } from "./styles";
 import type { Props } from './types'
 
@@ -7,4 +7,4 @@ return <Container onClick={onClick}>{children}</Container>
     
 }
 
-export default Button
+export default memo(Button)
